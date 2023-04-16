@@ -1,0 +1,10 @@
+zyz:	main.o	test.o 	
+	gcc -o zyz $^
+
+%.o:	%.c
+	gcc -c -o $@	$<
+
+clean:
+	@rm *.o	zyz			# @ 表示不显示指令		*.o 是因为 执行的命令是控制台命令
+
+.PHONY:	clean
